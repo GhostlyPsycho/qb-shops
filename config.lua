@@ -181,7 +181,8 @@ Config.Locations = {
         ['blipscale'] = 0.6,
         ['blipcolor'] = 0,
         ['delivery'] = vector4(26.45, -1315.51, 29.62, 0.07),
-        ['useStock'] = true
+        ['useStock'] = true,
+        ['restock'] = true
     },
 
     ['247supermarket2'] = {
@@ -309,7 +310,9 @@ Config.Locations = {
         ['blipsprite'] = 52,
         ['blipscale'] = 0.6,
         ['blipcolor'] = 0,
-        ['delivery'] = vector4(379.97, 357.3, 102.56, 26.42)
+        ['delivery'] = vector4(379.97, 357.3, 102.56, 26.42),
+        ['useStock'] = true,
+        ['restock'] = true
     },
 
     -- LTD Gasoline Locations
@@ -413,7 +416,7 @@ Config.Locations = {
     ['robsliquor2'] = {
         ['label'] = 'Rob\'s Liqour',
         ['coords'] = vector4(-1486.59, -377.68, 40.16, 139.51),
-        ['ped'] = 'mp_m_shopkeep_01',
+        ['ped'] = 'mp_m_waremech_01',
         ['scenario'] = 'WORLD_HUMAN_STAND_MOBILE',
         ['radius'] = 1.5,
         ['targetIcon'] = 'fas fa-shopping-basket',
@@ -423,7 +426,8 @@ Config.Locations = {
         ['blipsprite'] = 52,
         ['blipscale'] = 0.6,
         ['blipcolor'] = 0,
-        ['delivery'] = vector4(-1468.29, -387.61, 38.79, 220.13)
+        ['delivery'] = vector4(-1468.29, -387.61, 38.79, 220.13),
+        ['restock'] = false
     },
 
     ['robsliquor3'] = {

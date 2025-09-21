@@ -60,14 +60,16 @@ RegisterNetEvent('qb-shops:server:RestockShopItems', function(shop)
     TriggerClientEvent('qb-shops:client:SetShopItems', -1, shop, Config.Locations[shop].products)
 end)
 
-RegisterNetEvent('qb-shops:server:UpdateShopItems', function(shop, itemData, amount) -- called from inventory
+RegisterNetEvent('qb-shops:server:UpdateShopItems', function(shop, itemData, amount)
     if not shop or not itemData or not amount then return end
     if not Config.Locations[shop] then return end
     if not Config.Locations[shop].useStock then return end
+    
     Config.Locations[shop].products[itemData.slot].amount -= amount
     if Config.Locations[shop].products[itemData.slot].amount < 0 then
         Config.Locations[shop].products[itemData.slot].amount = 0
     end
+    
     saveShopInv(shop, Config.Locations[shop].products)
     TriggerClientEvent('qb-shops:client:SetShopItems', -1, shop, Config.Locations[shop].products)
 end)
@@ -159,6 +161,7 @@ RegisterNetEvent('qb-shops:server:openShop', function(data)
 
         if addProduct then
             curProduct.slot = #items + 1
+            curProduct.restock = shopData.restock -- Added for restock checks
             items[#items + 1] = curProduct
         end
     end
